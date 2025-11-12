@@ -1,0 +1,5 @@
+#!/C:/xampp8/php/php
+
+<?php
+echo 'Welcome to the Brain Games!';
+?>
