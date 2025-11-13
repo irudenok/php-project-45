@@ -1,0 +1,10 @@
+#!/C:/xampp8/php/php
+
+<?php
+use function BrainGames\Games\Prime\start;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+start();
+
+?>
