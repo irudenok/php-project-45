@@ -3,33 +3,22 @@
 <?php
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Engine\exec;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-line('Welcome to the Brain Games!');
-$name = prompt('May I have your name?');
-line("Hello, %s!", $name);
+$description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+$data = [];
 
 for ($rounds = 0; $rounds < 3; $rounds++) {
     $question = rand(1, 100);
     $answer = isEven($question) ? 'yes' : 'no';
-
-    line('Answer "yes" if the number is even, otherwise answer "no".');
-
-    line("Question: {$question}");
-    $userAnswer = prompt('Your answer ');
-
-    if ($userAnswer != $answer) {
-        line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$answer}'.");
-        line("Let's try again, {$name}!");
-        return;
-    }
-
-    line('Correct!');
+    $data[$question] = $answer;
 }
 
-line("Congratulations, {$name}!");
-    
+exec($description, $data);
+
 function isEven($question)
 {
     return $question % 2 === 0;
