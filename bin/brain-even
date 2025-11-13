@@ -1,27 +1,10 @@
 #!/C:/xampp8/php/php
 
 <?php
-use function cli\line;
-use function cli\prompt;
-use function BrainGames\Engine\exec;
+use function BrainGames\Games\Even\start;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$description = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-$data = [];
-
-for ($rounds = 0; $rounds < 3; $rounds++) {
-    $question = rand(1, 100);
-    $answer = isEven($question) ? 'yes' : 'no';
-    $data[$question] = $answer;
-}
-
-exec($description, $data);
-
-function isEven($question)
-{
-    return $question % 2 === 0;
-}
+start();
 
 ?>
