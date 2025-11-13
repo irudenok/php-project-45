@@ -1,5 +1,10 @@
 #!/C:/xampp8/php/php
 
 <?php
-echo 'Welcome to the Brain Games!';
+use function BrainGames\Cli\hello;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+hello();
+
 ?>

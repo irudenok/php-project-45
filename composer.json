@@ -8,8 +8,18 @@
             "email": "rudenok.it@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.6"
+    },
     "bin": [
 	  "bin/brain-games"
-	]
+	],
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^4.0"
+    }
 }
