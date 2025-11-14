@@ -2,16 +2,18 @@
 
 namespace BrainGames\Games\Calc;
 
-use function BrainGames\Engine\exec;
+use function BrainGames\Engine\runGame;
 
-function start()
+function start(): void
 {
 	$description = 'What is the result of the expression?';
 
 	$data = [];
 	$operations = ['+', '-', '*'];
 
-	for ($rounds = 0; $rounds < 3; $rounds++) {
+	$roundsAmount = 3;
+
+	for ($rounds = 0; $rounds < $roundsAmount; $rounds++) {
 	    $number1 = rand(1, 15);
 	    $number2 = rand(1, 15);
 	    $operator = $operations[array_rand($operations)];
@@ -27,5 +29,5 @@ function start()
 	    $data[$question] = (string) $answer;
 	}
 
-	exec($description, $data);
+	runGame($description, $data);
 }

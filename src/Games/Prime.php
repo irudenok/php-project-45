@@ -2,23 +2,25 @@
 
 namespace BrainGames\Games\Prime;
 
-use function BrainGames\Engine\exec;
+use function BrainGames\Engine\runGame;
 
-function start()
+function start(): void
 {
     $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $data = [];
 
-    for ($rounds = 0; $rounds < 3; $rounds++) {
+    $roundsAmount = 3;
+    
+    for ($rounds = 0; $rounds < $roundsAmount; $rounds++) {
         $question = rand(1, 100);
         $answer = isPrime($question) ? 'yes' : 'no';
         $data[$question] = $answer;
     }
 
-    exec($description, $data);
+    runGame($description, $data);
 }
 
-function isPrime($n)
+function isPrime(int $n): bool
 {
     if ($n < 2) return false;
     if ($n == 2) return true;

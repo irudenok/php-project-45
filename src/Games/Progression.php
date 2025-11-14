@@ -2,17 +2,18 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\Engine\exec;
+use function BrainGames\Engine\runGame;
 
-function start()
+function start(): void
 {
     $description = 'What number is missing in the progression?';
     $data = [];
     $progressionLen = 10;
     $minValue = 1;
     $maxValue = 10;
+    $roundsAmount = 3;
 
-    for ($rounds = 0; $rounds < 3; $rounds++) {
+    for ($rounds = 0; $rounds < $roundsAmount; $rounds++) {
         $start = rand($minValue, $maxValue);
         $step = rand(1, 10);
 
@@ -28,5 +29,5 @@ function start()
         $data[implode(' ', $progression)] = (string) $answer;
     }
 
-    exec($description, $data);
+    runGame($description, $data);
 }
