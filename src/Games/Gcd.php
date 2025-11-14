@@ -27,7 +27,7 @@ function getGcd(int $a, int $b): int
 {
     $a = abs($a);
     $b = abs($b);
-    while ($b != 0) {
+    while ($b !== 0) {
         list($a, $b) = array($b, $a % $b);
     }
     return $a;
