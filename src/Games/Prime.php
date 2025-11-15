@@ -22,23 +22,22 @@ function start(): void
 
 function isPrime(int $n): bool
 {
+    $result = true;
+
     if ($n < 2) {
-        return false;
-    }
-
-    if ($n === 2) {
-        return true;
-    }
-
-    if ($n % 2 === 0) {
-        return false;
-    }
-
-    for ($i = 3; $i * $i <= $n; $i += 2) {
-        if ($n % $i === 0) {
-            return false;
+        $result = false;
+    } elseif ($n === 2) {
+        $result = true;
+    } elseif ($n % 2 === 0) {
+        $result = false;
+    } else {
+        for ($i = 3; $i * $i <= $n; $i += 2) {
+            if ($n % $i === 0) {
+                $result = false;
+                break;
+            }
         }
     }
 
-    return true;
+    return $result;
 }
