@@ -1,3 +1,5 @@
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=irudenok_php-project-45&metric=coverage)](https://sonarcloud.io/summary/new_code?id=irudenok_php-project-45)
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/irudenok/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/irudenok/php-project-45/actions)
 
