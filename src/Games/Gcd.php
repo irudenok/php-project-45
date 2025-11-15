@@ -16,7 +16,6 @@ function start(): void
         $answer = getGcd($number1, $number2);
 
         $question = "{$number1} {$number2}";
-
         $data[$question] = (string) $answer;
     }
 
