@@ -10,7 +10,6 @@ function start(): void
 
     $data = [];
     $operations = ['+', '-', '*'];
-
     $roundsAmount = 3;
 
     for ($rounds = 0; $rounds < $roundsAmount; $rounds++) {
